@@ -8,6 +8,7 @@ export const services: Service[] = [
       "Installation de systèmes de climatisation réversible (split, multi-split, gainable) pour votre maison ou local professionnel. Marques Daikin, Mitsubishi, Atlantic, Toshiba. Devis gratuit, pose soignée, mise en service incluse.",
     icon: "Wind",
     slug: "/climatisation-installation",
+    image: "/images/heroes/chauffage.jpeg",
   },
   {
     title: "Pompe à chaleur",
@@ -16,6 +17,7 @@ export const services: Service[] = [
       "Installation et remplacement de pompe à chaleur air-air ou air-eau pour le chauffage et le rafraîchissement. Solution écologique et économique. Certifié RGE QualiPAC : bénéficiez des aides MaPrimeRénov', CEE et de l'éco-PTZ.",
     icon: "Zap",
     slug: "/chauffage-pompe-chaleur",
+    image: "/images/pages/chauffage-pac.jpeg",
   },
   {
     title: "Chauffage individuel",
@@ -24,6 +26,7 @@ export const services: Service[] = [
       "Installation et entretien de systèmes de chauffage individuel : chaudière gaz condensation, plancher chauffant hydraulique, radiateurs. Entretien annuel, dépannage et remplacement de votre installation de chauffage.",
     icon: "Flame",
     slug: "/chauffage",
+    image: "/images/pages/chauffage-chaudiere-gaz.jpeg",
   },
   {
     title: "Installation thermodynamique",
@@ -32,6 +35,7 @@ export const services: Service[] = [
       "Installation de ballons thermodynamiques et systèmes de production d'eau chaude sanitaire haute performance. Réduction de votre consommation électrique jusqu'à 70%. Éligible aux aides de l'État.",
     icon: "Droplets",
     slug: "/thermodynamique",
+    image: "/images/heroes/chauffe-eau.jpeg",
   },
   {
     title: "Plomberie & Sanitaire",
@@ -40,13 +44,15 @@ export const services: Service[] = [
       "Travaux de plomberie courante et sanitaire : installation, remplacement et mise aux normes de robinetterie, tuyauterie, WC, éviers, douches. Intervention rapide pour les urgences : fuite, canalisation bouchée.",
     icon: "Wrench",
     slug: "/plomberie",
+    image: "/images/heroes/plomberie.jpeg",
   },
   {
     title: "Dépannage frigorifique",
     shortDescription: "Dépannage clim, fuite frigorigène, rechargement fluide.",
     description:
       "Dépannage et maintenance de systèmes climatisation et frigorifiques. Détection et réparation de fuites de fluide frigorigène, rechargement, nettoyage des filtres. Habilitation manipulation des fluides frigorigènes.",
-    icon: "Wrench",
+    icon: "Snowflake",
     slug: "/depannage-plomberie",
+    image: "/images/heroes/depannage-plomberie.jpeg",
   },
 ];

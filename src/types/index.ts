@@ -10,6 +10,7 @@ export interface Service {
   shortDescription: string;
   icon: string;
   slug: string;
+  image?: string;
 }
 
 export interface Testimonial {

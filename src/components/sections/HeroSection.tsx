@@ -60,7 +60,7 @@ export function HeroSection({
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 className="inline-block text-xs font-semibold tracking-[0.3em] uppercase text-accent-400 mb-6"
               >
-                Plombier chauffagiste &mdash; {siteConfig.address.city}
+                Installateur RGE QualiPAC &mdash; {siteConfig.address.city}
               </motion.span>
 
               {/* Title with word-by-word animation */}
@@ -133,16 +133,18 @@ export function HeroSection({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-20 bg-primary-950/50 backdrop-blur-sm border-t border-white/10 rounded-t-3xl"
+            className="relative z-20 bg-primary-950/60 backdrop-blur-md border-t border-white/10"
           >
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-5">
-              <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-                {badges.map((badge) => (
-                  <span
-                    key={badge}
-                    className="text-sm font-medium text-neutral-300"
-                  >
-                    {badge}
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+              <div className="flex flex-wrap items-center justify-center gap-y-2">
+                {badges.map((badge, i) => (
+                  <span key={badge} className="flex items-center">
+                    <span className="text-sm font-semibold text-white/90 px-4 py-1">
+                      {badge}
+                    </span>
+                    {i < badges.length - 1 && (
+                      <span className="w-px h-4 bg-white/20 shrink-0" aria-hidden="true" />
+                    )}
                   </span>
                 ))}
               </div>
