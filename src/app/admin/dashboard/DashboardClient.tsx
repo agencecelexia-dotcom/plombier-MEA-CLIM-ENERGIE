@@ -701,11 +701,20 @@ export function DashboardClient({ initialEvents, initialSubmissions }: Dashboard
           </>
         ) : (
           /* Submissions tab */
-          <SubmissionsTable
-            submissions={submissions}
-            onUpdateStatus={handleUpdateStatus}
-            onDelete={handleDelete}
-          />
+          <div>
+            {/* Demo notice */}
+            <div className="mb-4 flex items-center gap-2 px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-300 text-sm">
+              <Info className="w-4 h-4 shrink-0" />
+              <span>
+                <span className="font-semibold">Données de démonstration</span> — Ces demandes sont fictives et servent uniquement à illustrer le fonctionnement du panneau admin.
+              </span>
+            </div>
+            <SubmissionsTable
+              submissions={submissions}
+              onUpdateStatus={handleUpdateStatus}
+              onDelete={handleDelete}
+            />
+          </div>
         )}
       </div>
     </div>
