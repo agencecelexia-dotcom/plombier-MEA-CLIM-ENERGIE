@@ -281,13 +281,17 @@ function SubmissionsTable({
   const statusColors: Record<string, string> = {
     new: "bg-blue-500/20 text-blue-300",
     read: "bg-amber-500/20 text-amber-300",
+    replied_email: "bg-purple-500/20 text-purple-300",
+    replied_phone: "bg-cyan-500/20 text-cyan-300",
     done: "bg-emerald-500/20 text-emerald-300",
   };
 
   const statusLabels: Record<string, string> = {
     new: "Nouveau",
     read: "Lu",
-    done: "Traite",
+    replied_email: "Répondu par email",
+    replied_phone: "Répondu par tél.",
+    done: "Traité",
   };
 
   if (submissions.length === 0) {
@@ -306,23 +310,30 @@ function SubmissionsTable({
           key={sub.id}
           className="bg-[#0f172a] rounded-xl p-4 border border-slate-700/50 hover:border-slate-600/50 transition-colors"
         >
+          {/* Header */}
           <div className="flex items-start justify-between gap-4 mb-3">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1">
                 <span className="font-medium text-white">{sub.nom}</span>
-                <span className={`text-xs px-2 py-0.5 rounded-full ${statusColors[sub.status]}`}>
+                <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${statusColors[sub.status]}`}>
                   {statusLabels[sub.status]}
                 </span>
               </div>
-              <div className="flex items-center gap-4 text-sm text-slate-400">
-                <span className="flex items-center gap-1">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-slate-400">
+                <a
+                  href={`tel:${sub.telephone.replace(/\s/g, "")}`}
+                  className="flex items-center gap-1 hover:text-cyan-300 transition-colors"
+                >
                   <Phone className="w-3 h-3" />
                   {sub.telephone}
-                </span>
-                <span className="flex items-center gap-1">
+                </a>
+                <a
+                  href={`mailto:${sub.email}`}
+                  className="flex items-center gap-1 hover:text-purple-300 transition-colors"
+                >
                   <Mail className="w-3 h-3" />
                   {sub.email}
-                </span>
+                </a>
               </div>
             </div>
             <div className="text-xs text-slate-500 flex items-center gap-1 shrink-0">
@@ -331,18 +342,50 @@ function SubmissionsTable({
             </div>
           </div>
 
+          {/* Service */}
           <div className="flex items-center gap-2 mb-3 text-sm">
             <Wrench className="w-3.5 h-3.5 text-slate-500" />
             <span className="text-slate-300">{sub.service}</span>
           </div>
 
+          {/* Message */}
           {sub.message && (
-            <p className="text-sm text-slate-400 mb-3 bg-slate-800/50 rounded-lg p-3">
+            <p className="text-sm text-slate-400 mb-4 bg-slate-800/50 rounded-lg p-3 leading-relaxed">
               {sub.message}
             </p>
           )}
 
-          <div className="flex items-center gap-2">
+          {/* Actions */}
+          <div className="flex flex-wrap items-center gap-2">
+            {/* Répondre par email */}
+            <a
+              href={`mailto:${sub.email}?subject=Réponse à votre demande — MEA Clim Énergie&body=Bonjour ${sub.nom},%0D%0A%0D%0AMerci pour votre demande concernant : ${sub.service}.%0D%0A%0D%0A`}
+              onClick={() => {
+                if (sub.status === "new" || sub.status === "read") {
+                  onUpdateStatus(sub.id, "replied_email");
+                }
+              }}
+              className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-300 hover:bg-purple-500/20 transition-colors"
+            >
+              <Mail className="w-3 h-3" />
+              Répondre par email
+            </a>
+
+            {/* Appeler */}
+            <a
+              href={`tel:${sub.telephone.replace(/\s/g, "")}`}
+              onClick={() => {
+                if (sub.status === "new" || sub.status === "read") {
+                  onUpdateStatus(sub.id, "replied_phone");
+                }
+              }}
+              className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500/20 transition-colors"
+            >
+              <Phone className="w-3 h-3" />
+              Appeler
+            </a>
+
+            {/* Marquer lu */}
             {sub.status === "new" && (
               <button
                 onClick={() => onUpdateStatus(sub.id, "read")}
@@ -352,15 +395,19 @@ function SubmissionsTable({
                 Marquer lu
               </button>
             )}
+
+            {/* Traité */}
             {sub.status !== "done" && (
               <button
                 onClick={() => onUpdateStatus(sub.id, "done")}
                 className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 transition-colors"
               >
                 <CheckCircle className="w-3 h-3" />
-                Traite
+                Traité
               </button>
             )}
+
+            {/* Supprimer */}
             <button
               onClick={() => onDelete(sub.id)}
               className="flex items-center gap-1 text-xs px-3 py-1.5 rounded-lg bg-red-500/10 text-red-300 hover:bg-red-500/20 transition-colors ml-auto"
@@ -513,7 +560,7 @@ export function DashboardClient({ initialEvents, initialSubmissions }: Dashboard
         <div className="mb-6 bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 flex items-start gap-3">
           <Info className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
           <div>
-            <p className="text-white font-medium">Bonjour Thomas !</p>
+            <p className="text-white font-medium">Bonjour Michel !</p>
             <p className="text-sm text-slate-400 mt-0.5">
               Les donnees affichees sont factices et servent uniquement a des fins de demonstration.
             </p>

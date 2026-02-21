@@ -1,4 +1,3 @@
-// ⚠️ TODO : Mettre à jour l'adresse exacte (street, city, postalCode, region) avant mise en ligne
 export const siteConfig = {
   name: "MEA Clim Énergie",
   legalName: "MEA Clim Énergie",
@@ -9,10 +8,10 @@ export const siteConfig = {
   phoneHref: "tel:+33750264998",
   email: "mea.clim@gmail.com",
   address: {
-    street: "",
-    city: "votre secteur",
-    postalCode: "",
-    region: "France",
+    street: "1286 Route du Bas Privas",
+    city: "Charly",
+    postalCode: "69390",
+    region: "Auvergne-Rhône-Alpes",
     country: "France",
   },
   openingHours: {
