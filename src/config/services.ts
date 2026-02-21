@@ -44,7 +44,7 @@ export const services: Service[] = [
       "Travaux de plomberie courante et sanitaire : installation, remplacement et mise aux normes de robinetterie, tuyauterie, WC, éviers, douches. Intervention rapide pour les urgences : fuite, canalisation bouchée.",
     icon: "Wrench",
     slug: "/plomberie",
-    image: "/images/heroes/plomberie.jpeg",
+    image: "/images/heroes/hero-plomberie.png",
   },
   {
     title: "Dépannage frigorifique",
@@ -53,6 +53,6 @@ export const services: Service[] = [
       "Dépannage et maintenance de systèmes climatisation et frigorifiques. Détection et réparation de fuites de fluide frigorigène, rechargement, nettoyage des filtres. Habilitation manipulation des fluides frigorigènes.",
     icon: "Snowflake",
     slug: "/depannage-plomberie",
-    image: "/images/heroes/depannage-plomberie.jpeg",
+    image: "/images/heroes/hero-depannage.jpeg",
   },
 ];
