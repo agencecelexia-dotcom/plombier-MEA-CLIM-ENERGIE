@@ -85,27 +85,30 @@ export const pageImages: Record<string, string> = {
 };
 
 // ============================================================
-// Réalisations avant/après — toutes les photos Aqualeo (cohérentes)
+// Réalisations avant/après — photos générées MEA Clim Énergie
 // ============================================================
 export const realisationImages: Record<string, string> = {
-  "sdb-villeurbanne-before":          "/images/realisations/real-sdb-paris15-before.jpeg",
-  "sdb-villeurbanne-after":           "/images/realisations/real-sdb-paris15-after.jpeg",
-  "cuisine-lyon3-before":             "/images/realisations/real-cuisine-versailles-before.jpeg",
-  "cuisine-lyon3-after":              "/images/realisations/real-cuisine-versailles-after.jpeg",
-  "chauffe-eau-caluire-before":       "/images/realisations/real-fuite-boulogne-before.jpeg",
-  "chauffe-eau-caluire-after":        "/images/realisations/real-fuite-boulogne-after.jpeg",
-  "pac-bron-before":                  "/images/realisations/real-adduction-massy-before.jpeg",
-  "pac-bron-after":                   "/images/realisations/real-adduction-massy-after.jpeg",
-  "sdb-pmr-lyon6-before":             "/images/realisations/real-wc-levallois-before.jpeg",
-  "sdb-pmr-lyon6-after":             IMG_SDB_PMR,
-  "chaudiere-tassin-before":          "/images/realisations/real-tuyauterie-saintdenis-before.jpeg",
-  "chaudiere-tassin-after":          IMG_CHAUDIERE_GAZ,
-  "douche-lyon7-before":              "/images/realisations/real-robinetterie-creteil-before.jpeg",
-  "douche-lyon7-after":               "/images/realisations/real-robinetterie-creteil-after.jpeg",
-  "plancher-chauffant-ecully-before": "/images/realisations/real-debouchage-issy-before.jpeg",
-  "plancher-chauffant-ecully-after":  "/images/realisations/real-debouchage-issy-after.jpeg",
-  "depannage-lyon2-before":          IMG_FUITE_EAU,
-  "depannage-lyon2-after":            "/images/realisations/real-fuite-vincennes-after.png",
-  "sdb-complete-oullins-before":      "/images/realisations/real-appartneuf-nanterre-before.png",
-  "sdb-complete-oullins-after":      IMG_RENOVATION_SDB,
+  // Climatisation
+  "clim-maison-individuelle-before":  "/images/realisations/real-clim-maison-before.jpeg",
+  "clim-maison-individuelle-after":   "/images/realisations/real-clim-maison-after.jpeg",
+  "clim-multi-split-before":          "/images/realisations/real-multi-split-before.jpeg",
+  "clim-multi-split-after":           "/images/realisations/real-multi-split-after.jpeg",
+  // Chauffage
+  "pac-air-eau-maison-before":        "/images/realisations/real-pac-before.jpeg",
+  "pac-air-eau-maison-after":         "/images/realisations/real-pac-after.jpeg",
+  "chauffage-individuel-before":      "/images/realisations/real-chaudiere-before.jpeg",
+  "chauffage-individuel-after":       "/images/realisations/real-chaudiere-after.jpeg",
+  // Chauffe-eau
+  "ballon-thermodynamique-before":    "/images/realisations/real-ballon-thermo-before.jpeg",
+  "ballon-thermodynamique-after":     "/images/realisations/real-ballon-thermo-after.jpeg",
+  "chauffe-eau-solaire-before":       "/images/realisations/real-chauffe-eau-solaire-before.jpeg",
+  "chauffe-eau-solaire-after":        "/images/realisations/real-chauffe-eau-solaire-after.jpeg",
+  // Salle de bain
+  "renovation-salle-de-bain-before":  "/images/realisations/real-sdb-before.jpeg",
+  "renovation-salle-de-bain-after":   "/images/realisations/real-sdb-after.jpeg",
+  "douche-italienne-before":          "/images/realisations/real-douche-before.jpeg",
+  "douche-italienne-after":           "/images/realisations/real-douche-after.jpeg",
+  // Dépannage
+  "depannage-clim-before":            "/images/realisations/real-depannage-before.jpeg",
+  "depannage-clim-after":             "/images/realisations/real-depannage-after.jpeg",
 };
